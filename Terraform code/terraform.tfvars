@@ -19,7 +19,7 @@ rgs = {
 
 stgs = {
   stg1 = {
-    name                     = "merawalastghai"
+    name                     = "merawalastghai1996"
     location                 = "eastus"
     resource_group_name      = "mera_rg"
     account_replication_type = "LRS"
@@ -27,7 +27,7 @@ stgs = {
   }
 
   stg2 = {
-    name                     = "terawalastghai"
+    name                     = "terawalastghai1996"
     location                 = "westus"
     resource_group_name      = "tera_rg"
     account_replication_type = "LRS"
@@ -35,7 +35,7 @@ stgs = {
   }
 
   stg3 = {
-    name                     = "apnawalastghai"
+    name                     = "apnawalastghai1996"
     location                 = "centralus"
     resource_group_name      = "apna_rg"
     account_replication_type = "LRS"

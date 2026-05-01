@@ -47,7 +47,7 @@ stgs = {
 stg_container = {
   stg_container1 = {
     name                  = "tfstate"
-    storage_account_name  = "apnawalastghai"
+    storage_account_name  = "apnawalastghai1996"
     container_access_type = "private"
   }
 }

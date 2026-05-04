@@ -33,14 +33,6 @@ stgs = {
     account_replication_type = "LRS"
     account_tier             = "Standard"
   }
-
-  stg3 = {
-    name                     = "apnawalastghai1996"
-    location                 = "centralus"
-    resource_group_name      = "apna_rg"
-    account_replication_type = "LRS"
-    account_tier             = "Standard"
-  }
 }
 
 

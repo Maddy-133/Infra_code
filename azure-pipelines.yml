@@ -3,6 +3,10 @@ trigger: none
 pool:
   name: 'DevOps Insider ka shair'
 
+variables:
+  code_location: '$(System.DefaultWorkingDirectory)/Terraform code'
+  backend_svc: 'mehdiwif'
+
 steps:
 - task: TerraformInstaller@1
   inputs:
@@ -13,8 +17,8 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/Terraform code'
-    backendServiceArm: 'mehdiwif'
+    workingDirectory: $(code_location)
+    backendServiceArm: $(backend_svc)
     backendAzureRmResourceGroupName: 'mehdi_rg'
     backendAzureRmStorageAccountName: 'mehdihyd1996'
     backendAzureRmContainerName: 'mehdicontainer'
@@ -25,8 +29,9 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/Terraform code'
-    environmentServiceNameAzureRM: 'mehdiwif'
+    workingDirectory: $(code_location)
+    environmentServiceNameAzureRM: '$(backend_svc)'
+
 
 - task: TerraformTask@5
   displayName: 'Terraform Apply with auto approve'
@@ -34,7 +39,7 @@ steps:
     provider: 'azurerm'
     command: 'apply'
     commandOptions: '-auto-approve'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/Terraform code'
-    environmentServiceNameAzureRM: 'mehdiwif'
+    workingDirectory: $(code_location)
+    environmentServiceNameAzureRM: '$(backend_svc)'
 
 

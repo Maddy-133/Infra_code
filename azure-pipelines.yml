@@ -30,7 +30,7 @@ steps:
     provider: 'azurerm'
     command: 'plan'
     workingDirectory: $(code_location)
-    environmentServiceNameAzureRM: '$(backend_svc)'
+    environmentServiceNameAzureRM: $(backend_svc)
 
 
 - task: TerraformTask@5
@@ -40,6 +40,12 @@ steps:
     command: 'apply'
     commandOptions: '-auto-approve'
     workingDirectory: $(code_location)
-    environmentServiceNameAzureRM: '$(backend_svc)'
+    environmentServiceNameAzureRM: $(backend_svc)
 
 
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'destroy'
+    workingDirectory: $(code_location)
+    environmentServiceNameAzureRM: $(backend_svc)

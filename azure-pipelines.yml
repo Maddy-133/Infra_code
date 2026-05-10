@@ -2,7 +2,7 @@ trigger:
   branches:
     include:
       - main
-      - features/*
+      - features*
 
 
 pool:
@@ -40,6 +40,12 @@ steps:
 
 - task: TerraformTask@5
   displayName: 'Terraform Apply with auto approve'
+
+  condition: and(
+              succeeded(),
+              eq(variables['Build.SourceBranch'], 'refs/heads/main')
+            )
+            
   inputs:
     provider: 'azurerm'
     command: 'apply'

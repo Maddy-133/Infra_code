@@ -1,4 +1,9 @@
-trigger: none
+trigger:
+  branches:
+    include:
+      - main
+      - features/*
+
 
 pool:
   name: 'DevOps Insider ka shair'

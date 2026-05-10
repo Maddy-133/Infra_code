@@ -23,6 +23,10 @@ rgs = {
     name = "abbujaan_rg"
     location = "eastus"
   }
+  rg6 = {
+    name = "ammijaan_rg"
+    location = "eastus"
+  }
 }
 
 

@@ -13,7 +13,14 @@ rgs = {
     name     = "apna_rg"
     location = "centralus"
   }
+
+  rg4 = {
+    name = "mera_rg"
+    location = "eastus"
+  }
 }
+
+
 
 
 
